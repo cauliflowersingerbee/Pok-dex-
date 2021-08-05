@@ -82,7 +82,7 @@ let pokemonList = [
     weight: 8.5, 
     types: 'fire'
   },
-  
+
   { 
     name: 'Charmeleon', 
     height: 1.1, 
@@ -92,7 +92,7 @@ let pokemonList = [
 ];
 
 for (let i=0; i <pokemonList.length; i++) {
-  document.write(" My name is " + pokemonList[i].name + "," + " I am the greatest Pokémon and I weigh " + pokemonList[i].weight + " kgs" + ";")
+  document.write("<p>" + "My name is " + pokemonList[i].name + "," + " I am the greatest Pokémon and I weigh " + pokemonList[i].weight + " kgs" + "<p>")
 } 
 
 /*
