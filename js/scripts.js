@@ -93,6 +93,9 @@ let pokemonList = [
 
 for (let i=0; i <pokemonList.length; i++) {
   document.write("<p>" + "My name is " + pokemonList[i].name + "," + " I am the greatest Pokémon and I weigh " + pokemonList[i].weight + " kgs" + "<p>")
+  if (pokemonList[i].height > 1.1 ) {
+    document.write(" - Wow, that's big!")
+  }
 } 
 
 /*
@@ -113,9 +116,9 @@ for (let i=0; i < person.length; i++){
   }
 }
 Now, adding conditional to loop of pokemon data, using h for height:
-*/
+
 for (let h=0; h<pokemonList.length; h++) {
 if (pokemonList[h].height > 1.1 ) {
   document.write(" - Wow, that's big!")
 }
-}
+}*/
