@@ -49,7 +49,7 @@ for (let i=0; i<pokemonList.length; i++) {
 for (let i=0; i<pokemonList.length; i++) {
   console.log(pokemonList[i])
 }
-*/
+
 
 
 //creating for loop from array of Pokemon data:
@@ -122,3 +122,78 @@ if (pokemonList[h].height > 1.1 ) {
   document.write(" - Wow, that's big!")
 }
 }*/
+
+
+
+/*
+
+for loop vs for each loop: 
+
+let userList = [
+  {
+    name: 'Liz',
+    age: 20
+  },
+  {
+    name: 'John',
+    age: 30
+  },
+  {
+    name: 'Sammy',
+    age: 40
+  }
+];
+Logging the details of this list using a traditional for loop would look something like this:
+
+for(let i = 0; i < userList.length; i++) {
+  console.log(userList[i].name + ' is ' + userList[i].age + ' years old.');
+}
+However, when using forEach() loops, it would look like this:
+
+userList.forEach(function(user) {
+  console.log(user.name + ' is ' + user.age + ' years old.');
+});
+*/
+
+
+let pokemonList = [
+  { 
+    name: 'Bulbasaur', 
+    height: 0.7, 
+    weight: 6.9, 
+    types: ['grass', 'poison']
+  },
+
+  { 
+    name: 'Ivysaur', 
+    height: 1 , 
+    weight: 13, 
+    types: ['grass', 'poison']
+  },
+
+  { 
+    name: 'Venusaur', 
+    height: 2, 
+    weight: 100, 
+    types: ['grass', 'poison']
+  },
+
+  { 
+    name: 'Charmander', 
+    height: 0.6, 
+    weight: 8.5, 
+    types: 'fire'
+  },
+
+  { 
+    name: 'Charmeleon', 
+    height: 1.1, 
+    weight: 19, 
+    types: 'fire'
+  },
+];
+
+pokemonList.forEach(function(item) {
+  document.write("<p>" + "My name is " + item.name + "," + " I am the greatest Pokémon and I weigh " + item.weight + " kgs" + "<p>");
+});
+
