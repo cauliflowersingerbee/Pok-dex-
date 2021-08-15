@@ -163,9 +163,10 @@ IIFE Pattern:
 console.log(data); // undefined, as it's not global, but in a function!
 */
 
-//places pokemon array in for each loop:
+//wraps pokemonList in IIFE:
 
-  let pokemonList = [
+(function (pokemon) {
+let pokemonList = [
     { 
       name: 'Bulbasaur', 
       height: 0.7, 
@@ -201,17 +202,49 @@ console.log(data); // undefined, as it's not global, but in a function!
       types: 'fire'
     },
   ];
+
   
-pokemonList.forEach(function(pokemon) {
-document.write('<p>' + ' My name is ' + pokemon.name + ',' + ' I weigh ' + pokemon.weight + ' kgs' + ' and I am the greatest Pokémon in the world.');
-});
+})()
 
-/*
-
-//pokemon repository variable
+//creates a pokemon repository variable
 
 let pokemonRepository = (function () {
-      let pokemonList = [];
+      let pokemonList = [
+        { 
+          name: 'Bulbasaur', 
+          height: 0.7, 
+          weight: 6.9, 
+          types: ['grass', 'poison']
+        },
+      
+        { 
+          name: 'Ivysaur', 
+          height: 1 , 
+          weight: 13, 
+          types: ['grass', 'poison']
+        },
+      
+        { 
+          name: 'Venusaur', 
+          height: 2, 
+          weight: 100, 
+          types: ['grass', 'poison']
+        },
+      
+        { 
+          name: 'Charmander', 
+          height: 0.6, 
+          weight: 8.5, 
+          types: 'fire'
+        },
+      
+        { 
+          name: 'Charmeleon', 
+          height: 1.1, 
+          weight: 19, 
+          types: 'fire'
+        },
+      ];
       
       function add(pokemon) {
         pokemonList.push(pokemon);
@@ -224,20 +257,17 @@ let pokemonRepository = (function () {
         add: add,
         getAll: getAll
       };
-
+      
 })();
 
-document.write(pokemonRepository.getAll());
-pokemonRepository.add({name: 'LittlePokemonIMadeUp', height: 3, type: 'FireWater'})
-pokemonRepository.add({name: 'AnotherPokemonIMadeUp', height: 6, type: 'SkyDirt'})
-document.write(pokemonRepository.getAll());
+//places pokemon array in for each loop
 
-
-pokemonRepository.getAll(pokemon).forEach(function() {
-  pokemonRepository.pokemonList(pokemon)
-
+pokemonRepository.add({name: 'LittlePokemonIMadeUp', weight: 3, type: 'FireWater'})  
+pokemonRepository.add({name: 'AnotherPokemonIMadeUp', weight: 6, type: 'SkyDirt'})
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write('<p>' + ' My name is ' + pokemon.name + ',' + ' I weigh ' + pokemon.weight + ' kgs' + ' and I am the greatest Pokémon in the world.');
 });
-*/
+
 
 
 
