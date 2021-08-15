@@ -163,10 +163,8 @@ IIFE Pattern:
 console.log(data); // undefined, as it's not global, but in a function!
 */
 
-//places pokemon array in IIFE:
+//places pokemon array in for each loop:
 
-
-(function (pokemonListArray) {
   let pokemonList = [
     { 
       name: 'Bulbasaur', 
@@ -204,7 +202,11 @@ console.log(data); // undefined, as it's not global, but in a function!
     },
   ];
   
-}) ();
+pokemonList.forEach(function(pokemon) {
+document.write('<p>' + ' My name is ' + pokemon.name + ',' + ' I weigh ' + pokemon.weight + ' kgs' + ' and I am the greatest Pokémon in the world.');
+});
+
+/*
 
 //pokemon repository variable
 
@@ -235,6 +237,7 @@ pokemonRepository.getAll(pokemon).forEach(function() {
   pokemonRepository.pokemonList(pokemon)
 
 });
+*/
 
 
 
