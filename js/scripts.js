@@ -153,47 +153,89 @@ However, when using forEach() loops, it would look like this:
 userList.forEach(function(user) {
   console.log(user.name + ' is ' + user.age + ' years old.');
 });
+
+
+IIFE Pattern: 
+(function () {
+  let data = {};
+  // put your code in here
+})();
+console.log(data); // undefined, as it's not global, but in a function!
 */
 
+//places pokemon array in IIFE:
 
-let pokemonList = [
-  { 
-    name: 'Bulbasaur', 
-    height: 0.7, 
-    weight: 6.9, 
-    types: ['grass', 'poison']
-  },
 
-  { 
-    name: 'Ivysaur', 
-    height: 1 , 
-    weight: 13, 
-    types: ['grass', 'poison']
-  },
+(function (pokemonListArray) {
+  let pokemonList = [
+    { 
+      name: 'Bulbasaur', 
+      height: 0.7, 
+      weight: 6.9, 
+      types: ['grass', 'poison']
+    },
+  
+    { 
+      name: 'Ivysaur', 
+      height: 1 , 
+      weight: 13, 
+      types: ['grass', 'poison']
+    },
+  
+    { 
+      name: 'Venusaur', 
+      height: 2, 
+      weight: 100, 
+      types: ['grass', 'poison']
+    },
+  
+    { 
+      name: 'Charmander', 
+      height: 0.6, 
+      weight: 8.5, 
+      types: 'fire'
+    },
+  
+    { 
+      name: 'Charmeleon', 
+      height: 1.1, 
+      weight: 19, 
+      types: 'fire'
+    },
+  ];
+  
+}) ();
 
-  { 
-    name: 'Venusaur', 
-    height: 2, 
-    weight: 100, 
-    types: ['grass', 'poison']
-  },
+//pokemon repository variable
 
-  { 
-    name: 'Charmander', 
-    height: 0.6, 
-    weight: 8.5, 
-    types: 'fire'
-  },
+let pokemonRepository = (function () {
+      let pokemonList = [];
+      
+      function add(pokemon) {
+        pokemonList.push(pokemon);
+      }
+      function getAll() {
+        return pokemonList;
+      }
 
-  { 
-    name: 'Charmeleon', 
-    height: 1.1, 
-    weight: 19, 
-    types: 'fire'
-  },
-];
+      return {
+        add: add,
+        getAll: getAll
+      };
 
-pokemonList.forEach(function(item) {
-  document.write("<p>" + "My name is " + item.name + "," + " I am the greatest Pokémon and I weigh " + item.weight + " kgs" + "<p>");
+})();
+
+document.write(pokemonRepository.getAll());
+pokemonRepository.add({name: 'LittlePokemonIMadeUp', height: 3, type: 'FireWater'})
+pokemonRepository.add({name: 'AnotherPokemonIMadeUp', height: 6, type: 'SkyDirt'})
+document.write(pokemonRepository.getAll());
+
+
+pokemonRepository.getAll(pokemon).forEach(function() {
+  pokemonRepository.pokemonList(pokemon)
+
 });
+
+
+
 
