@@ -1,5 +1,7 @@
 
-/* how to write arrays:
+/* WEB DEV NOTES:
+
+how to write arrays:
 
 1. array of strings
 let foodArray = ['pizza', 'tuna', 'apple'];
@@ -50,9 +52,7 @@ for (let i=0; i<pokemonList.length; i++) {
   console.log(pokemonList[i])
 }
 
-
-
-//creating for loop from array of Pokemon data:
+creating for loop from array of Pokemon data:
 
 let pokemonList = [
   { 
@@ -98,7 +98,6 @@ for (let i=0; i <pokemonList.length; i++) {
   }
 } 
 
-/*
 adding conditional to for loop
 let person = [
   {name: "person1", age: 16},
@@ -121,11 +120,7 @@ for (let h=0; h<pokemonList.length; h++) {
 if (pokemonList[h].height > 1.1 ) {
   document.write(" - Wow, that's big!")
 }
-}*/
-
-
-
-/*
+}
 
 for loop vs for each loop: 
 
@@ -163,53 +158,12 @@ IIFE Pattern:
 console.log(data); // undefined, as it's not global, but in a function!
 */
 
-//wraps pokemonList in IIFE:
 
-(function (pokemon) {
-let pokemonList = [
-    { 
-      name: 'Bulbasaur', 
-      height: 0.7, 
-      weight: 6.9, 
-      types: ['grass', 'poison']
-    },
-  
-    { 
-      name: 'Ivysaur', 
-      height: 1 , 
-      weight: 13, 
-      types: ['grass', 'poison']
-    },
-  
-    { 
-      name: 'Venusaur', 
-      height: 2, 
-      weight: 100, 
-      types: ['grass', 'poison']
-    },
-  
-    { 
-      name: 'Charmander', 
-      height: 0.6, 
-      weight: 8.5, 
-      types: 'fire'
-    },
-  
-    { 
-      name: 'Charmeleon', 
-      height: 1.1, 
-      weight: 19, 
-      types: 'fire'
-    },
-  ];
-
-  
-})()
-
-//creates a pokemon repository variable
+//wraps in IIFE and creates a pokemon repository variable
 
 let pokemonRepository = (function () {
-      let pokemonList = [
+      
+  let pokemonList = [
         { 
           name: 'Bulbasaur', 
           height: 0.7, 
@@ -245,27 +199,38 @@ let pokemonRepository = (function () {
           types: 'fire'
         },
       ];
-      
+     //creates functions that interact with IIFE: 
       function add(pokemon) {
         pokemonList.push(pokemon);
       }
       function getAll() {
         return pokemonList;
       }
+      function addListItem (pokemon) {
+        let ul = document.querySelector('.pokemon-list');
+        let ol = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('my-button');
+        ol.appendChild(button);
+        ul.appendChild(ol);
+        };
 
       return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem
       };
       
 })();
 
 //places pokemon array in for each loop
 
-pokemonRepository.add({name: 'LittlePokemonIMadeUp', weight: 3, type: 'FireWater'})  
-pokemonRepository.add({name: 'AnotherPokemonIMadeUp', weight: 6, type: 'SkyDirt'})
+pokemonRepository.add({name: 'LittlePokemonIMadeUp', weight: 3, types: 'FireWater'})  
+pokemonRepository.add({name: 'AnotherPokemonIMadeUp', weight: 6, types: 'SkyDirt'})
+console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(function(pokemon) {
-  document.write('<p>' + ' My name is ' + pokemon.name + ',' + ' I weigh ' + pokemon.weight + ' kgs' + ' and I am the greatest Pokémon in the world.');
+  pokemonRepository.addListItem(pokemon);
 });
 
 
