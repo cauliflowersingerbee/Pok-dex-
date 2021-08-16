@@ -206,6 +206,8 @@ let pokemonRepository = (function () {
       function getAll() {
         return pokemonList;
       }
+      //adds buttons & event listener
+
       function addListItem (pokemon) {
         let ul = document.querySelector('.pokemon-list');
         let ol = document.createElement('li');
@@ -214,7 +216,16 @@ let pokemonRepository = (function () {
         button.classList.add('my-button');
         ol.appendChild(button);
         ul.appendChild(ol);
-        };
+        button.addEventListener('click', function (event) {
+            console.log(pokemon);
+        });
+      };
+
+      //creates showDetails function
+
+      function showDetails (pokemon) {
+        console.log();
+      }
 
       return {
         add: add,
@@ -232,8 +243,3 @@ console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
-
-
-
-
-
