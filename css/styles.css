@@ -4,29 +4,130 @@ body {
     font-weight: 5 00;
     line-height: 3.5em;
     color: #fff;
-    background-color:rgb(34, 107, 175);
+    background-color:teal;
+}
+
+.pokemon-list {
+  list-style: none;
+  text-align: center;
 }
 
 .my-button {
     text-decoration: none;
     color: #fff;
     background-color:rgb(236, 86, 16);
-    padding: 0.2 em;
-    margin: 0.1 em;
+    padding: 1 em;
+    margin: 1 em;
+    border: wheat; 
     text-transform:uppercase;
     text-align: center;
     border-radius: 10%;
     list-style-type: none;
     line-height: 3em;
+    font-size: large;
+    font-weight: 600;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-@media (max-width: 768px) {
-    line-height: 5em;
-    font-size: 18px;
+.my-button:hover {
+  background-color:cornflowerblue;
+
+}
+  .pokemon-list:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
+  }
 }
 
-@media (max-width: 480px) {
-    line-height: 2em;
-    font-size: 14px;
+html, 
+body {
+  font-family: Arial, sans-serif;
 }
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+
+/*CSS for modal container*/
+  display: block;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  
+  /* to show it above other content */
+  z-index: 999; 
+  
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto; 
+  
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
+  }
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 50px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;;
+  text-align: left;
+  border-radius: 10%;
+  font-size:medium;
+  line-height: 1em;
+  background-color:firebrick;
+  color: #fff;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
+
+
+@media all and (max-width: 500px) {
+  .pokemon-list {
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .pokemon-list {
+      -ms-grid-columns: 1fr 20px 1fr;
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .pokemon-list {
+      grid-gap: 10px;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .pokemon-list {
+      grid-gap: 10px;
+  }
