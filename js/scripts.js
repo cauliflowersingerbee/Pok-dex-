@@ -12,16 +12,16 @@
         modalClose.classList.add('modal-close');
 
     let pokemonName = document.createElement('h1');
-        pokemonName.classList.add('Pokemon-name');
+        pokemonName.classList.add('pokemon-name');
     let pokemonHeight = document.createElement('p');
-        pokemonHeight.classList.add('Pokemon-height');
+        pokemonHeight.classList.add('pokemon-height');
     let pokemonType = document.createElement('p');
-        pokemonType.classList.add('Pokemon-type');
+        pokemonType.classList.add('pokemon-type');
     
     let imageContainer = document.createElement('div');
     imageContainer.classList.add('img-container');
     let pokemonImage = document.createElement('img');
-    pokemonImage.classList.add('Pokemon-image');
+    pokemonImage.classList.add('pokemon-image');
         
   
     //function to load pokemon list:
