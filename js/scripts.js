@@ -13,13 +13,16 @@
 
     let pokemonName = document.createElement('h1');
         pokemonName.classList.add('pokemon-name');
+
     let pokemonHeight = document.createElement('p');
         pokemonHeight.classList.add('pokemon-height');
+
     let pokemonType = document.createElement('p');
         pokemonType.classList.add('pokemon-type');
     
     let imageContainer = document.createElement('div');
     imageContainer.classList.add('img-container');
+
     let pokemonImage = document.createElement('img');
     pokemonImage.classList.add('pokemon-image');
         
@@ -62,10 +65,13 @@
         let pokelist = document.querySelector('.pokemon-list');
         let listOfPoke = document.createElement('li');
         let button = document.createElement('button');
+        
         button.innerText = pokemon.name;
         button.classList.add('my-button');
+        
         listOfPoke.appendChild(button);
         pokelist.appendChild(listOfPoke);
+        
         button.addEventListener('click', function (event) {
             showDetails(pokemon);
         });
@@ -89,9 +95,13 @@
 
       function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-          pokemonName.innerHTML = pokemon.name;
-          pokemonHeight.innerHTML = 'Height: ' + pokemon.height;
-          pokemonType.innerHTML = 'Type: ' + pokemon.types;
+          pokemonName.innerText = pokemon.name;
+          pokemonHeight.innerText = 'Height: ' + pokemon.height;
+          //pokemonType.innerText = 'Type: ' + pokemon.types;
+          for (let type of pokemon.types) {
+            pokemonType.innerText = 'Type: ' + type.type.name;            
+          }
+
           pokemonImage.src = pokemon.imageUrl;
           modalClose.innerHTML = "Close";
           showModal();
@@ -125,10 +135,10 @@
           }
         });
         //3. to close modal by clicking outside modal
-            modalContainer.addEventListener('click', (e) => {
+            modalContainer.addEventListener('click', (event) => {
             // Since this is also triggered when clicking INSIDE the modal
             // We only want to close if the user clicks directly on the overlay
-            let target = e.target;
+            let target = event.target;
             if (target === modalContainer) {
               hideModal();
             }
@@ -150,7 +160,7 @@
     })();
 
     //calls loadList function
-    pokemonRepository.loadList().then(function() {
+    pokemonRepository.loadList().then(function(list) {
     //creates forEach Loop
     pokemonRepository.getAll().forEach(function(pokemon){
     //calls add function
