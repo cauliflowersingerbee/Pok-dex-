@@ -96,7 +96,7 @@
         loadDetails(pokemon).then(function () {
           pokemonName.innerText = pokemon.name;
           pokemonHeight.innerText = 'Height: ' + pokemon.height;
-          //pokemonType.innerText = 'Type: ' + pokemon.types;
+          pokemonType.innerText = 'Type: '
           for (let type of pokemon.types) {
             const txt = document.createTextNode(type.type.name)  
             pokemonType.appendChild(txt)          
@@ -169,11 +169,6 @@
   });
 
 
-
-
-   
-      
-      
 
     
       

@@ -131,3 +131,8 @@ body {
   .pokemon-list {
       grid-gap: 10px;
   }
+
+
+.pokemon-image {
+  size: 50rem;
+}
