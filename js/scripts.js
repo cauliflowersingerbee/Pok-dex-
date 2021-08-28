@@ -171,19 +171,7 @@
 
 
 
-      /*
-      
-      function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
-          pokemonName.innerText = pokemon.name;
-          pokemonHeight.innerText = 'Height: ' + pokemon.height;
-          //pokemonType.innerText = 'Type: ' + pokemon.types;
-          for (let type of pokemon.types) {
-            document.createTextNode(type.type.name) + ''; 
-            pokemonType.appendChild(textNode)          
-          }
-
-      */
+   
       
       
 
