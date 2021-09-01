@@ -86,7 +86,7 @@
       pokelist.appendChild(listOfPoke);
       listOfPoke.appendChild(pokemonButton);
       
-      button.addEventListener('click', function (event) {
+      pokemonButton.addEventListener('click', function (event) {
           showDetails(pokemon);
       });
     };
