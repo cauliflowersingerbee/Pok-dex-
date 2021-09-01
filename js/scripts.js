@@ -14,7 +14,7 @@
   modalBody.empty();
 
   //name element
-  let pokemonName = $('<h1>' + item.name + '</h1>');
+  let pokemonName = $('<h1>' + item.name + '<h1>');
 
   //imageElement
   let pokemonImage = $('<img class="modal-img" style="width:50%>');
