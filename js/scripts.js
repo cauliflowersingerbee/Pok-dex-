@@ -1,31 +1,31 @@
 
- let pokemonRepository = (function () {
-  let pokemonList = [];
+ const pokemonRepository = (function () {
+  const pokemonList = [];
  //creating variable of pokemon API
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   //show modal content
   function showModal(item) {
-    let modalBody = $('.modal-body');
-    let modalTitle = $('.modal-title');
+    const modalBody = $('.modal-body');
+    const modalTitle = $('.modal-title');
 
   //clear existing modal content
   modalTitle.empty();
   modalBody.empty();
 
   //name element
-  let pokemonName = $('<h1>' + item.name + '<h1>');
+  const pokemonName = $('<h1>' + item.name + '</h1>');
 
   //imageElement
-  let pokemonImage = $('<img class="modal-img" style="width:50%>');
+  const pokemonImage = $('<img class="modal-img" style="width:50%>');
   pokemonImage.attr('src', item.imageUrl);
 
   //height element
-  let pokemonHeight = $('p' + 'height : ' + item.height + 'p');
+  const pokemonHeight = $('p' + 'height : ' + item.height + 'p');
 
 
   //types element
-  let pokemonType = $('p' + 'type : ' + item.types + 'p');
+  const pokemonType = $('p' + 'type : ' + item.types + 'p');
 
   
   modalTitle.append(pokemonName);
@@ -73,11 +73,11 @@
     & add event listener*/
 
     function addListItem (pokemon) {
-      let pokelist = document.querySelector('.pokemon-list');
-      let listOfPoke = document.createElement('li');
+      const pokelist = document.querySelector('.pokemon-list');
+      const listOfPoke = document.createElement('li');
       listOfPoke.classList.add('group-list-item');
 
-      let pokemonButton = document.createElement('button');
+      const pokemonButton = document.createElement('button');
       pokemonButton.innerText = pokemon.name;
       pokemonButton.classList.add('btn', 'btn-primary', 'pokemon-button');
       pokemonButton.setAttribute('data-toggle', 'modal');
@@ -94,7 +94,7 @@
 
     // function to load pokemon details from URL to array
     function loadDetails(item) {
-      let url = item.detailsUrl;
+      const url = item.detailsUrl;
       return fetch(url).then(function (response) {
         return response.json();
       }).then(function (details) {
