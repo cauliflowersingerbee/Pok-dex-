@@ -21,11 +21,11 @@
   imageElement.attr('src', item.imageUrl);
 
   //height element
-  let pokemonHeight = $('<p>' + 'height : ' item.height + '</p>');
+  let pokemonHeight = $('p' + 'height : ' + item.height + 'p');
 
 
   //types element
-  let pokemonType = $('<p>' + 'type : ' + item.types + '</p>');
+  let pokemonType = $('p' + 'type : ' + item.types + 'p');
 
   
   modalTitle.append(pokemonName);
@@ -112,10 +112,6 @@
           showModal()      
         });
 
-    //makes modal visible
-    function 
-    
-
     return {
         add: add,
         getAll: getAll,
@@ -123,13 +119,10 @@
         loadList: loadList,
         loadDetails: loadDetails,
         showDetails: showDetails,
-        showModal: showModal,
-        hideModal: hideModal
+        showModal: showModal
       };
-
       
-    }
-    
+  })(); 
 
   //calls loadList function
   pokemonRepository.loadList().then(function(list) {
@@ -139,6 +132,8 @@
     pokemonRepository.addListItem(pokemon);
   });  
 });
+
+
 
 
 
