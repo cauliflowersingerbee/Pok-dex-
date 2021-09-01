@@ -109,8 +109,9 @@
 
     function showDetails(item) {
       pokemonRepository.loadDetails(item).then(function() {
-          showModal()      
-        });
+          showModal()    
+      });  
+      };
 
     return {
         add: add,
@@ -121,8 +122,8 @@
         showDetails: showDetails,
         showModal: showModal
       };
-      
-  })(); 
+
+})();
 
   //calls loadList function
   pokemonRepository.loadList().then(function(list) {
@@ -131,7 +132,7 @@
   //calls add function
     pokemonRepository.addListItem(pokemon);
   });  
-});
+
 
 
 
