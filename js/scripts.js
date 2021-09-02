@@ -92,13 +92,14 @@
     };
 
 
-    // function to load pokemon details from URL to array
+    // function to load pokemon details from API to array
     function loadDetails(item) {
       const url = item.detailsUrl;
       return fetch(url).then(function (response) {
         return response.json();
       }).then(function (details) {
         //assigning details from the response
+        item.name = details.name;
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
