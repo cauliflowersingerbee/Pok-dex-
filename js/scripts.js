@@ -27,7 +27,12 @@
   //types element
   const pokemonType = $('p' + 'type : ' + item.types + 'p');
 
-  
+  for (let type of pokemon.types) {
+    const txt = document.createTextNode(type.type.name)  
+    pokemonType.appendChild(txt)          
+  }
+
+
   modalTitle.append(pokemonName);
   modalBody.append(pokemonImage);
   modalBody.append(pokemonHeight);
@@ -73,15 +78,15 @@
     & add event listener*/
 
     function addListItem (pokemon) {
-      const pokelist = document.querySelector('.pokemon-list');
+      const pokelist = document.querySelector('.pokemon-list', '#list-group');
       const listOfPoke = document.createElement('li');
-      listOfPoke.classList.add('group-list-item');
+      listOfPoke.classList.add('list-group-item');
 
       const pokemonButton = document.createElement('button');
       pokemonButton.innerText = pokemon.name;
       pokemonButton.classList.add('btn', 'btn-primary', 'pokemon-button');
       pokemonButton.setAttribute('data-toggle', 'modal');
-      pokemonButton.setAttribute('data-target', '#modal-container')
+      pokemonButton.setAttribute('data-target', '#modal-container', '#modal')
 
       pokelist.appendChild(listOfPoke);
       listOfPoke.appendChild(pokemonButton);
@@ -99,7 +104,6 @@
         return response.json();
       }).then(function (details) {
         //assigning details from the response
-        item.name = details.name;
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
