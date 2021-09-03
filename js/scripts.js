@@ -17,15 +17,15 @@
   const pokemonName = $('<h1>' + item.name + '</h1>');
 
   //imageElement
-  const pokemonImage = $('<img class="modal-img" style="width:50%>');
+  const pokemonImage = $('<img class="modal-img" style="width" :50%>');
   pokemonImage.attr('src', item.imageUrl);
 
   //height element
-  const pokemonHeight = $('p' + 'height : ' + item.height + 'p');
+  const pokemonHeight = $('<p>' + 'height : ' + item.height + '<p/>');
 
 
   //types element
-  const pokemonType = $('p' + 'type : ' + item.types + 'p');
+  const pokemonType = $('<p>' + 'type : ' + item.types + '<p/>');
 
   for (let type of pokemon.types) {
     const txt = document.createTextNode(type.type.name)  
