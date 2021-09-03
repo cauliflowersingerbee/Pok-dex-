@@ -44,29 +44,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
-/*
-@media all and (max-width: 500px) {
-  .pokemon-list {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  }
+.container {
+  padding: 1.5em;
 }
 
-@media all and (min-width: 500px) and (max-width: 750px) {
-  .pokemon-list {
-      -ms-grid-columns: 1fr 20px 1fr;
-      grid-template-columns: 1fr 1fr;
-  }
+.modal-content {
+  background-color: darkgoldenrod;
+  color: darkred;
 }
-
-@media all and (max-width: 750px) {
-  .pokemon-list {
-      grid-gap: 10px;
-  }
-}
-
-@media all and (max-width: 750px) {
-  .pokemon-list {
-      grid-gap: 10px;
-  }*/
