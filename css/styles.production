@@ -14,6 +14,11 @@ body {
 
 }
 
+  .pokemon-list:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
+  }
+
 html, 
 body {
   font-family: Arial, sans-serif;
