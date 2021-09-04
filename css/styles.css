@@ -30,7 +30,7 @@ body {
 .modal-content {
   background-color:#375C8C;
   color:#F2AE30;
-  padding: 6em;
+  padding: 2em;
   display: flex;
 }
 
@@ -42,10 +42,7 @@ body {
   line-height: 1em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1rem;
-  
-  
-  
-  
+  padding: 1em;
 }
 
 .modal-img {

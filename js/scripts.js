@@ -21,16 +21,12 @@
   pokemonImage.attr('src', item.imageUrl);
 
   //height element
-  const pokemonHeight = $('<p>' + 'height : ' + item.height + '<p/>');
+  const pokemonHeight = $('<p>' + 'Height : ' + item.height + 'm' + '<p/>');
 
 
   //types element
-  const pokemonType = $('<p>' + 'type : ' + '</p>');
+  const pokemonType = $('<p>' + 'Type : ' + '</p>');
 
- /* for (const type of item.types) {
-    const txt = document.createTextNode(type.type.name)  
-    pokemonType.append(txt)          
-  }*/
 
   for (const type of item.types) {
     const txt = document.createElement('li')
