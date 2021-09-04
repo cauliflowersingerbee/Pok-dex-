@@ -1,38 +1,19 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 2em;
-    font-weight: 5 00;
-    line-height: 3.5em;
-    color: #fff;
-    background-color:teal;
+    font-weight: 500;
+    line-height: 1em;
+    background-color: #F25C05;
+    color: #375C8C;
+    
 }
 
 .pokemon-list {
   list-style: none;
   text-align: center;
-}
-
-.my-button {
-    text-decoration: none;
-    color: #fff;
-    background-color:rgb(236, 86, 16);
-    padding: 1 em;
-    margin: 1 em;
-    border: wheat; 
-    text-transform:uppercase;
-    text-align: center;
-    border-radius: 10%;
-    list-style-type: none;
-    line-height: 3em;
-    font-size: large;
-    font-weight: 600;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.my-button:hover {
-  background-color:cornflowerblue;
 
 }
+
   .pokemon-list:last-child {
       grid-column: auto / auto;
       grid-row: auto / auto;
@@ -44,11 +25,54 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.container {
-  padding: 1.5em;
-}
+
 
 .modal-content {
-  background-color: darkgoldenrod;
-  color: darkred;
+  background-color:#375C8C;
+  color:#F2AE30;
+  padding: 6em;
+  display: flex;
 }
+
+.modal-header {
+  text-transform:capitalize;
+}
+
+.modal-dialog {
+  line-height: 1em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  
+  
+  
+  
+}
+
+.modal-img {
+  float: left;
+  width: 150px;
+  height: auto;
+}
+
+.list-group-item {
+  margin: .2em;
+  background: none;
+  box-shadow:none;
+  outline: none;
+
+
+}
+
+.btn {
+  background-color: #F2AE30;
+  line-height: 3rem;
+  border-radius: 20%;
+  color:#375C8C;
+  font-weight: 700;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-shadow: none;
+  padding: none;
+  margin: none;
+  border: none;
+}
+

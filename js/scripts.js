@@ -25,11 +25,19 @@
 
 
   //types element
-  const pokemonType = $('<p>' + 'type : ' + item.types + '<p/>');
+  const pokemonType = $('<p>' + 'type : ' + '</p>');
 
-  for (let type of pokemon.types) {
+ /* for (const type of item.types) {
     const txt = document.createTextNode(type.type.name)  
-    pokemonType.appendChild(txt)          
+    pokemonType.append(txt)          
+  }*/
+
+  for (const type of item.types) {
+    const txt = document.createElement('li')
+    txt.innerText = `${type.type.name}`;
+    pokemonType.append(txt)
+
+
   }
 
 
@@ -114,7 +122,7 @@
 
     function showDetails(item) {
       pokemonRepository.loadDetails(item).then(function() {
-          showModal()    
+          showModal(item)    
       });  
       };
 
