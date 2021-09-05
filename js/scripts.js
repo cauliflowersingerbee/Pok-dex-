@@ -36,6 +36,8 @@
 
   }
 
+  
+
 
   modalTitle.append(pokemonName);
   modalBody.append(pokemonImage);
