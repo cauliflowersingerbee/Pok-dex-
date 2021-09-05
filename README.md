@@ -5,6 +5,7 @@ data from an external API and enables the viewing of data points in detail.
 
 
 #Project Description:
+
 The Pokédex App fetches a list of Pokémons from the Pokémon API, loads them, and displays them upon a user action (i.e a 'click'). The app has the following features:
 
 - It is built with HTML, CSS, Javascript, & some jQuery
